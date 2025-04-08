@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kesar Mango - Gujarat's Golden Treasure</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+    --primary: #FF8C00;
+    --primary-dark: #E65100;
+    --primary-light: #FFE0B2;
+    --secondary: #4CAF50;
+    --secondary-dark: #388E3C;
+    --light: #FFF9E6;
+    --dark: #333;
+    --accent: #FFD54F;
+    --accent-dark: #FFC107;
+    --white: #fff;
+    --text: #444;
+    --text-light: #666;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text);
+    background-color: var(--light);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-dark);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: var(--white);
+    box-shadow: var(--shadow-sm);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+header.scrolled {
+    padding: 15px 5%;
+    box-shadow: var(--shadow-md);
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+}
+
+.logo {
+    height: 65px;
+    transition: var(--transition);
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+}
+
+nav a {
+    padding: 10px 20px;
+    background-color: transparent;
+    color: var(--primary-dark);
+    border: 2px solid transparent;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+    font-size: 0.95rem;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+nav a:hover, nav a.active {
+    background-color: var(--primary);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 140, 0, 0.2);
+}
+
+/* Section Styles */
+section {
+    min-height: 100vh;
+    padding: 120px 5% 80px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 50px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.section-title:after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    margin: 20px auto 0;
+    border-radius: 3px;
+}
+
+/* Hero Section */
+#home {
+    background: linear-gradient(135deg, var(--light) 0%, #FFECB3 100%);
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+#home:before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,213,79,0.1) 0%, transparent 70%);
+    z-index: 0;
+}
+
+@media (min-width: 992px) {
+    #home {
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.hero-content {
+    max-width: 600px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 35px;
+    color: var(--text-light);
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 35px;
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    border: 2px solid var(--primary);
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button:hover {
+    background-color: transparent;
+    color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 140, 0, 0.4);
+}
+
+.cta-button:active {
+    transform: translateY(-1px);
+}
+
+.hero-image {
+    position: relative;
+    max-width: 550px;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.mango-image {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.5s;
+    position: relative;
+}
+
+.mango-image:hover {
+    transform: scale(1.03) rotate(2deg);
+}
+
+.decoration {
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+    top: -10%;
+    left: -10%;
+    opacity: 0.5;
+    animation: pulse 8s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(1.1); opacity: 0.3; }
+}
+
+/* Floating Elements */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.floating-element {
+    position: absolute;
+    background-color: var(--primary-light);
+    opacity: 0.5;
+    border-radius: 50%;
+    animation: float 15s infinite linear;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+    100% { transform: translateY(0) rotate(360deg); }
+}
+
+/* About Section */
+#about {
+    background-color: var(--white);
+    position: relative;
+}
+
+#about:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23FFF9E6" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23FFF9E6" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23FFF9E6"/></svg>') no-repeat;
+    background-size: cover;
+    z-index: 0;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+@media (min-width: 768px) {
+    .about-container {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+    border: 5px solid var(--white);
+}
+
+.about-image:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px dashed var(--primary);
+    border-radius: 20px;
+    top: -15px;
+    left: -15px;
+    z-index: -1;
+    transition: var(--transition);
+}
+
+.about-image:hover:before {
+    transform: rotate(5deg);
+}
+
+.about-image:hover img {
+    transform: translate(-5px, -5px);
+}
+
+.about-details {
+    flex: 1;
+    padding: 20px;
+}
+
+.about-details h2 {
+    font-size: 2.3rem;
+    margin-bottom: 25px;
+    color: var(--primary);
+    position: relative;
+    display: inline-block;
+}
+
+.about-details h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent);
+}
+
+.about-details p {
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+.about-details ul {
+    list-style-type: none;
+    margin-top: 30px;
+}
+
+.about-details li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 35px;
+    color: var(--text-light);
+}
+
+.about-details li:before {
+    content: "✓";
+    color: var(--secondary);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+/* Features Section */
+#features {
+    background-color: var(--light);
+    padding-bottom: 150px;
+}
+
+.features-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+@media (min-width: 768px) {
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.feature-card {
+    background-color: var(--white);
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(255, 140, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.feature-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.feature-card:hover:before {
+    height: 10px;
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 25px;
+    display: inline-flex;
+    padding: 20px;
+    background-color: var(--primary-light);
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.feature-card:hover .feature-icon {
+    transform: rotate(15deg) scale(1.1);
+    background-color: var(--accent);
+    color: var(--primary-dark);
+}
+
+.feature-card h3 {
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+}
+
+.feature-card p {
+    color: var(--text-light);
+}
+
+/* Testimonials Section */
+#testimonials {
+    background-color: var(--primary-dark);
+    color: var(--white);
+    padding: 100px 5%;
+    text-align: center;
+}
+
+#testimonials .section-title {
+    color: var(--white);
+}
+
+#testimonials .section-title:after {
+    background: linear-gradient(90deg, var(--accent), var(--white));
+}
+
+.testimonial-slider {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.testimonial-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    margin: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.testimonial-content {
+    font-style: italic;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.author-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent);
+}
+
+.author-info h4 {
+    color: var(--accent);
+    margin-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.author-info p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Order Section */
+#footer {
+    background-color: var(--light);
+    position: relative;
+    padding-bottom: 150px;
+}
+
+#order:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23ffffff" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23ffffff" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23ffffff"/></svg>') no-repeat;
+    background-size: cover;
+    transform: rotate(180deg);
+    z-index: 0;
+}
+
+.order-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--white);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(255, 140, 0, 0.1);
+}
+
+.order-container h2 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: var(--transition);
+    background-color: var(--light);
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.2);
+    background-color: var(--white);
+}
+
+.form-group:after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 140, 0, 0.3), transparent);
+}
+
+.submit-btn {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 18px 35px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: block;
+    margin: 40px auto 0;
+    transition: var(--transition);
+    width: 100%;
+    max-width: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(230, 81, 0, 0.4);
+}
+
+.submit-btn:hover:before {
+    left: 100%;
+}
+
+/* Confirmation Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: var(--white);
+    padding: 60px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+    animation: fadeIn 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+.modal-content:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-icon {
+    font-size: 5rem;
+    color: var(--secondary);
+    margin-bottom: 25px;
+    animation: bounce 1s;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-30px);}
+    60% {transform: translateY(-15px);}
+}
+
+.modal h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.modal p {
+    font-size: 1.2rem;
+    margin-bottom: 35px;
+    color: var(--text-light);
+}
+
+.close-modal {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+}
+
+.close-modal:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(230, 81, 0, 0.4);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-dark);
+    color: var(--white);
+    padding: 80px 5% 40px;
+    text-align: center;
+    position: relative;
+}
+
+footer:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23E65100" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23E65100" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23E65100"/></svg>') no-repeat;
+    background-size: cover;
+    z-index: 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+@media (min-width: 768px) {
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+        text-align: left;
+    }
+}
+
+.footer-logo {
+    height: 90px;
+    margin-bottom: 25px;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+
+.footer-column h3 {
+    color: var(--accent);
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-column h3:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--accent);
+}
+
+.footer-column p, .footer-column a {
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 15px;
+    display: block;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-column a:hover {
+    color: var(--white);
+    transform: translateX(5px);
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.contact-icon {
+    font-size: 1.2rem;
+    color: var(--accent);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+@media (min-width: 768px) {
+    .social-icons {
+        justify-content: flex-start;
+    }
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.social-icon:hover {
+    background-color: var(--primary);
+    transform: translateY(-5px) scale(1.1);
+}
+
+.social-icon img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+}
+
+.copyright {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.6);
+    font-size: 0.9rem;
+}
+
+/* Mobile Menu */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--primary-dark);
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 1001;
+}
+
+.mobile-menu-btn:hover {
+    color: var(--primary);
+    transform: rotate(90deg);
+}
+
+@media (max-width: 768px) {
+    nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--white);
+        flex-direction: column;
+        padding: 100px 20px 20px;
+        z-index: 1000;
+        transition: var(--transition);
+        transform: translateX(100%);
+    }
+    
+    nav.active {
+        display: flex;
+        transform: translateX(0);
+    }
+    
+    nav a {
+        text-align: center;
+        margin: 10px 0;
+        padding: 15px;
+        font-size: 1.1rem;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .order-container {
+        padding: 30px 20px;
+    }
+    
+    .feature-card {
+        padding: 30px 20px;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.4s;
+}
+
+.delay-3 {
+    animation-delay: 0.6s;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.mouse {
+    width: 25px;
+    height: 40px;
+    border: 2px solid var(--primary-dark);
+    border-radius: 15px;
+    position: relative;
+    animation: scrollIndicator 2s infinite;
+}
+
+@keyframes scrollIndicator {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.mouse:before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    width: 4px;
+    height: 8px;
+    background-color: var(--primary-dark);
+    border-radius: 2px;
+    transform: translateX(-50%);
+    animation: scrollWheel 2s infinite;
+}
+
+@keyframes scrollWheel {
+    0% { top: 5px; }
+    50% { top: 10px; }
+    100% { top: 5px; }
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-5px);
+}
+
+/* Quantity Selector */
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.quantity-btn {
+    width: 35px;
+    height: 35px;
+    background-color: var(--primary-light);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantity-btn:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.quantity-input {
+    width: 50px;
+    text-align: center;
+    margin: 0 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Mango Varieties */
+.varieties-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.varieties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.variety-card {
+    background-color: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.variety-card:hover {
+    transform: translateY
+}
+
+/* Order Form Styling */
+#orderForm {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff7e6; /* Light mango color */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Form Group (Each Input Section) */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Labels */
+.form-group label {
+    display: block;
+    font-weight: bold;
+    color: #ff9800; /* Mango orange color */
+    margin-bottom: 5px;
+}
+
+/* Input Fields */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Placeholder Styling */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+/* Focus Effect */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #ff9800;
+    box-shadow: 0 0 5px rgba(255, 152, 0, 0.5);
+    outline: none;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: #ff9800;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: #e68900;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    #orderForm {
+        width: 90%;
+        padding: 15px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header id="mainHeader">
+        <a href="#home"><img src="ChatGPT_Image_Apr_7__2025__04_43_19_PM-removebg-preview.png" alt="આમૃત કેરી" class="logo"></a>
+        <button class="mobile-menu-btn">☰</button>
+        <nav id="mainNav">
+            <a href="#home" class="active">હોમ</a>
+            <a href="#about">કેસર કેરી વિશે</a>
+            <a href="#features">ખાસિયતો</a>
+            <a href="#order">ઓર્ડર કરો</a>
+        </nav>
+    </header>
+    
+    <!-- Home Section -->
+<section id="home">
+    <div class="hero-content">
+        <h1>કેસર કેરી: ગુજરાતનો સોનાનો ખજાનો</h1>
+        <p>અમારી કેસર કેરી ગુજરાતના શ્રેષ્ઠ બાગોમાંથી તાજી અને સુગંધિત છે. દરેક કેરી પ્રેમ અને કાળજી સાથે ઉગાડવામાં આવે છે, જે આપના સ્વાદને એક અનોખો અનુભવ આપશે.</p>
+        <a href="#order" class="cta-button">હમણાં ઓર્ડર કરો</a>
+    </div>
+    <div class="hero-image">
+        <div class="decoration"></div>
+        <img id="kesarMango" src="Screenshot 2025-04-08 174023.png" alt="Fresh Kesar Mango" class="mango-image">
+    </div>
+</section>
+
+<!-- JavaScript for Image Switching -->
+<script>
+    (function() {
+        const mangoImages = ["Screenshot 2025-04-08 174120.png", "Screenshot 2025-04-08 174206.png", "Screenshot 2025-04-08 174243.png","pexels-julieaagaard-2294471.jpg","StockCake-Sliced Mango Platter_1744114440.jpg", "WhatsApp Image 2025-04-08 at 11.32.42_a81ef9d8.jpg", "WhatsApp Image 2025-04-08 at 11.32.42_d1956ccc.jpg","wmremove-transformed.png"]; // List of images
+        let mangoIndex = 0;
+        const mangoElement = document.getElementById("kesarMango");
+
+        function changeMangoImage() {
+            mangoIndex = (mangoIndex + 1) % mangoImages.length; // Cycle images
+            mangoElement.src = mangoImages[mangoIndex];
+        }
+
+        setInterval(changeMangoImage, 1000); // Change image every 3 seconds
+    })();
+</script>
+
+
+    
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img id="mangoImage" src="mango-344491_1280.jpg" alt="Kesar Mango Basket">
+            </div>
+            <div class="about-details">
+                <h2 class="section-title">કેસર કેરી વિશે</h2>
+                <p>કેસર કેરી, જેને "ગુજરાતનો સોનો" પણ કહેવામાં આવે છે, તે દુનિયાની સૌથી સુગંધિત અને સ્વાદિષ્ટ કેરીની જાતોમાંની એક છે. અમારી કેરી સૌરાષ્ટ્ર પ્રદેશના ફળદ્રુપ ભૂમિમાં ઉગાડવામાં આવે છે.</p>
+                <ul>
+                    <li>સુગંધિત અને મીઠી</li>
+                    <li>કોમળ ગર થાય છે</li>
+                    <li>કેસરી રંગ અને અનોખો સ્વાદ</li>
+                    <li>વિટામિન A અને C થી ભરપૂર</li>
+                    <li>100% ઓર્ગેનિક ખેતી પદ્ધતિ</li>
+                    <li>તાજી પિકિંગ અને પેકેજિંગ</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // Image Array
+        const images = ["StockCake-Sliced Mango Platter_1744114440.jpg", "WhatsApp Image 2025-04-08 at 11.32.42_a81ef9d8.jpg", "WhatsApp Image 2025-04-08 at 11.32.42_d1956ccc.jpg","wmremove-transformed.png","Screenshot 2025-04-08 174120.png", "Screenshot 2025-04-08 174206.png", "Screenshot 2025-04-08 174243.png","pexels-julieaagaard-2294471.jpg"]; // Add more images if needed
+        let index = 0;        
+    
+        function swapImage() {
+            index = (index + 1) % images.length; // Cycle through images
+            document.getElementById("mangoImage").src = images[index];
+        }
+    
+        setInterval(swapImage, 1000); // Change image every 3 seconds
+    </script>
+    
+    
+    <!-- Features Section -->
+    <section id="features">
+        <div class="features-container">
+            <h2 class="section-title">અમારી ખાસિયતો</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <h3>ઓર્ગેનિક ખેતી</h3>
+                    <p>કોઈપણ હાનિકારક રસાયણો વગર, પ્રાકૃતિક રીતે ઉગાડેલી કેરી</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>ગુણવત્તા ખાતરી</h3>
+                    <p>દરેક કેરી હાથથી પસંદ કરીને ગુણવત્તા ચકાસણી</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚚</div>
+                    <h3>ઝડપી ડિલિવરી</h3>
+                    <p>ઓર્ડર મળ્યા પછી 24-48 કલાકમાં તમારે દરવાજે ડિલિવરી</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Order Section -->
+     <!-- In your order section, replace the form with this: -->
+<!-- Order Form -->
+<form id="orderForm" method="POST" action="submit_order.php" onsubmit="return validateForm()">
+    <div class="form-group">
+        <label for="name">પૂરું નામ:</label>
+        <input type="text" id="name" name="name" required placeholder="તમારું પૂરું નામ લખો">
+        <small class="error" id="nameError"></small>
+    </div>
+    <div class="form-group">
+        <label for="phone">ફોન નંબર:</label>
+        <input type="tel" id="phone" name="phone" required placeholder="તમારો મોબાઇલ નંબર">
+        <small class="error" id="phoneError"></small>
+    </div>
+    <div class="form-group">
+        <label for="email">ઇમેઇલ (ઐચ્છિક):</label>
+        <input type="email" id="email" name="email" placeholder="તમારું ઇમેઇલ">
+        <small class="error" id="emailError"></small>
+    </div>
+    <div class="form-group">
+        <label for="quantity">કેટલા કિલો કેરી જોઈએ:</label>
+        <input type="number" id="quantity" name="quantity" required placeholder="કિલોમાં માત્રા" min="1">
+        <small class="error" id="quantityError"></small>
+    </div>
+    <div class="form-group">
+        <label for="address">સંપૂર્ણ સરનામું:</label>
+        <textarea id="address" name="address" rows="4" required placeholder="તમારું સંપૂર્ણ સરનામું લખો"></textarea>
+        <small class="error" id="addressError"></small>
+    </div>
+    <button type="submit" class="submit-btn">ઓર્ડર સબમિટ કરો</button>
+</form>
+
+<!-- JavaScript for Validation -->
+<script>
+function validateForm() {
+    let isValid = true;
+
+    // Name validation
+    const name = document.getElementById("name").value.trim();
+    if (name.length < 3) {
+        document.getElementById("nameError").textContent = "કૃપા કરીને ઓછામાં ઓછું 3 અક્ષરો દાખલ કરો.";
+        isValid = false;
+    } else {
+        document.getElementById("nameError").textContent = "";
+    }
+
+    // Phone number validation
+    const phone = document.getElementById("phone").value.trim();
+    const phonePattern = /^[6-9]\d{9}$/; // Valid Indian mobile number
+    if (!phonePattern.test(phone)) {
+        document.getElementById("phoneError").textContent = "માન્ય ભારતીય મોબાઇલ નંબર દાખલ કરો (10 અંક).";
+        isValid = false;
+    } else {
+        document.getElementById("phoneError").textContent = "";
+    }
+
+    // Email validation (optional)
+    const email = document.getElementById("email").value.trim();
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,6}$/;
+    if (email && !emailPattern.test(email)) {
+        document.getElementById("emailError").textContent = "માન્ય ઇમેઇલ દાખલ કરો.";
+        isValid = false;
+    } else {
+        document.getElementById("emailError").textContent = "";
+    }
+
+    // Quantity validation (should be at least 1)
+    const quantity = document.getElementById("quantity").value;
+    if (quantity < 10) {
+        document.getElementById("quantityError").textContent = "ઓછામાં ઓછી 10 કિલો પસંદ કરો.";
+        isValid = false;
+    } else {
+        document.getElementById("quantityError").textContent = "";
+    }
+
+    // Address validation
+    const address = document.getElementById("address").value.trim();
+    if (address.length < 10) {
+        document.getElementById("addressError").textContent = "કૃપા કરીને ઓછામાં ઓછી 10 અક્ષરોનો સરનામો દાખલ કરો.";
+        isValid = false;
+    } else {
+        document.getElementById("addressError").textContent = "";
+    }
+
+    return isValid; // Form submits only if all fields are valid
+}
+</script>
+
+<!-- CSS for Error Messages -->
+<style>
+    .error {
+        color: red;
+        font-size: 14px;
+        display: block;
+        margin-top: 5px;
+    }
+</style>
+
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <img src="logo-white.png" alt="Kesar Mango Logo" class="footer-logo">
+                <p>ગુજરાતની શ્રેષ્ઠ કેસર કેરી તમારે દરવાજે.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><img src="instagram.png" alt="Instagram"></a>
+                    <a href="#" class="social-icon"><img src="facebook.png" alt="Facebook"></a>
+                    <a href="#" class="social-icon"><img src="whatsapp.png" alt="WhatsApp"></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>જલ્દી લિંક્સ</h3>
+                <a href="#home">હોમ</a>
+                <a href="#about">કેસર કેરી વિશે</a>
+                <a href="#features">ખાસિયતો</a>
+                <a href="#order">ઓર્ડર કરો</a>
+            </div>
+            <div class="footer-column">
+                <h3>સંપર્ક કરો</h3>
+                <p>શ્યામ કેરી , સૌરાષ્ટ્ર, ગુજરાત</p>
+                <p>ફોન: +91 8511857442</p>
+                <p>ફોન: +91 72010 95448</p>
+               
+            </div>
+        </div>
+        <div class="copyright">
+            © 2023 શ્યામ કેરી
+        </div>
+    </footer>
+    
+    <!-- Order Confirmation Modal -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon">✓</div>
+            <h2>આભાર!</h2>
+            <p>તમારો ઓર્ડર સફળતાપૂર્વક મળી ગયો છે. અમારી ટીમ ટૂંક સમયમાં તમારો સંપર્ક કરશે અને ઓર્ડરની પુષ્ટિ કરશે.</p>
+            <p>કેસર કેરીનો આસ્વાદ લેવા બદલ ધન્યવાદ!</p>
+            <button class="close-modal" onclick="closeModal()">ઠીક છે</button>
+        </div>
+    </div>
+    
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mainNav').classList.remove('active');
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('mainHeader');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Active link highlighting
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
+        
+        window.addEventListener('scroll', function() {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Submit order form
+        function submitOrder() {
+            // Get form values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const quantity = document.getElementById('quantity').value;
+            
+            // Simple validation
+            if (!name || !phone || !quantity) {
+                alert('કૃપા કરીને બધી જરૂરી માહિતી ભરો');
+                return;
+            }
+            
+            // Show confirmation modal
+            document.getElementById('confirmationModal').style.display = 'flex';
+            
+            // You would typically send this data to a server here
+            console.log('Order submitted:', {name, phone, quantity});
+        }
+        
+        // Close modal
+        function closeModal() {
+            document.getElementById('confirmationModal').style.display = 'none';
+        }
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target === document.getElementById('confirmationModal')) {
+                closeModal();
+            }
+        });
+    </script>
+    <script>
+        // Replace your submitOrder function with this:
+document.getElementById('orderForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form values
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const quantity = document.getElementById('quantity').value;
+    const address = document.getElementById('address').value;
+    
+    // Simple validation
+    if (!name || !phone || !quantity || !address) {
+        alert('કૃપા કરીને બધી જરૂરી માહિતી ભરો');
+        return;
+    }
+    
+    // Submit the form via fetch API
+    const formData = new FormData(this);
+    
+    fetch(this.action, {
+        method: this.method,
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        // Show confirmation modal
+        document.getElementById('confirmationModal').style.display = 'flex';
+        // Reset form
+        this.reset();
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('ઓર્ડર સબમિટ કરતી વખતે ભૂલ આવી. કૃપા કરીને ફરી પ્રયાસ કરો.');
+    });
+});
+</script>
+</body>
+</html>
+
+
