@@ -1206,7 +1206,10 @@ footer:before {
             <a href="#home" class="active">હોમ</a>
             <a href="#about">કેસર કેરી વિશે</a>
             <a href="#features">ખાસિયતો</a>
-            <a href="#order">ઓર્ડર કરો</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYCmU8VyZEZVIhAezvfy1ztbXZ6vNnjx8x0-rOqWq2ghwuiA/viewform?usp=header" target="_blank" rel="noopener noreferrer">
+                ઓર્ડર કરો
+            </a>
+            
         </nav>
     </header>
     
@@ -1215,7 +1218,11 @@ footer:before {
     <div class="hero-content">
         <h1>કેસર કેરી: ગુજરાતનો સોનાનો ખજાનો</h1>
         <p>અમારી કેસર કેરી ગુજરાતના શ્રેષ્ઠ બાગોમાંથી તાજી અને સુગંધિત છે. દરેક કેરી પ્રેમ અને કાળજી સાથે ઉગાડવામાં આવે છે, જે આપના સ્વાદને એક અનોખો અનુભવ આપશે.</p>
-        <a href="#order" class="cta-button">હમણાં ઓર્ડર કરો</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYCmU8VyZEZVIhAezvfy1ztbXZ6vNnjx8x0-rOqWq2ghwuiA/viewform?usp=header" 
+   target="_blank" rel="noopener noreferrer" class="cta-button">
+    હમણાં ઓર્ડર કરો
+</a>
+
     </div>
     <div class="hero-image">
         <div class="decoration"></div>
@@ -1300,38 +1307,6 @@ footer:before {
         </div>
     </section>
     
-    <!-- Order Section -->
-     <!-- In your order section, replace the form with this: -->
-<!-- Order Form -->
-<form id="orderForm" method="POST" action="submit_order.php" onsubmit="return validateForm()">
-    <div class="form-group">
-        <label for="name">પૂરું નામ:</label>
-        <input type="text" id="name" name="name" required placeholder="તમારું પૂરું નામ લખો">
-        <small class="error" id="nameError"></small>
-    </div>
-    <div class="form-group">
-        <label for="phone">ફોન નંબર:</label>
-        <input type="tel" id="phone" name="phone" required placeholder="તમારો મોબાઇલ નંબર">
-        <small class="error" id="phoneError"></small>
-    </div>
-    <div class="form-group">
-        <label for="email">ઇમેઇલ (ઐચ્છિક):</label>
-        <input type="email" id="email" name="email" placeholder="તમારું ઇમેઇલ">
-        <small class="error" id="emailError"></small>
-    </div>
-    <div class="form-group">
-        <label for="quantity">કેટલા કિલો કેરી જોઈએ:</label>
-        <input type="number" id="quantity" name="quantity" required placeholder="કિલોમાં માત્રા" min="1">
-        <small class="error" id="quantityError"></small>
-    </div>
-    <div class="form-group">
-        <label for="address">સંપૂર્ણ સરનામું:</label>
-        <textarea id="address" name="address" rows="4" required placeholder="તમારું સંપૂર્ણ સરનામું લખો"></textarea>
-        <small class="error" id="addressError"></small>
-    </div>
-    <button type="submit" class="submit-btn">ઓર્ડર સબમિટ કરો</button>
-</form>
-
 <!-- JavaScript for Validation -->
 <script>
 function validateForm() {
